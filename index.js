@@ -17,9 +17,9 @@ document.getElementById("setName").addEventListener("submit", async function(eve
     document.getElementById("whosTurn").innerHTML = whosTurn;
 });
 
-function nextTurn() {
+async function nextTurn() {
     toggleWhosTurn();
-    document.getElementById("dare").innerHTML = getDare();
+    document.getElementById("dare").innerHTML = await getDare();
 }
 
 function toggleWhosTurn() {
@@ -31,7 +31,7 @@ function toggleWhosTurn() {
     document.getElementById("whosTurn").innerHTML = whosTurn;
 }
 
-function getDare() {
+async function getDare() {
     var randomIndex = Math.floor(Math.random() * dares.length);
     return dares[randomIndex];
 }
@@ -43,11 +43,11 @@ async function readFile() {
         const file = fileInput.files[0];
         const reader = new FileReader();
 
-        reader.onload = function(e) {
+        reader.onload = async function(e) {
             const fileContent = e.target.result;
             const stringArray = fileContent.split("\n"); // Split the content into an array by newline character
             dares = stringArray;
-            document.getElementById("dare").innerHTML = getDare();
+            document.getElementById("dare").innerHTML = await getDare();
         };
 
         reader.readAsText(file);
