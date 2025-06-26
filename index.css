@@ -1,13 +1,89 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* A nice deep purple to blue gradient */
+    color: #fff; /* Default text color to white for better contrast */
+    min-height: 100vh; /* Ensure gradient covers full viewport height */
+    padding-top: 20px; /* Add some padding at the top */
+    padding-bottom: 20px; /* Add some padding at the bottom */
 }
 
-/* Style for the centered text */
-.centered-text {
-    text-align: center;
-    font-size: 24px;
+/* Styles for the main content area to sit nicely within the body gradient */
+#container {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for content wrapper */
+    padding: 20px; /* Reduced padding as card will have its own */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
+
+/* Styling for Bootstrap cards to fit the theme */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* More opaque white for card background */
+    border: none; /* Remove default card border if any */
+    color: #333; /* Darker text color for card content for readability */
+}
+
+.card .card-title {
+    color: #0056b3; /* A darker blue for card titles, or use Bootstrap text-primary */
+}
+
+.form-label {
+    color: #333; /* Ensure form labels inside the card are dark for readability */
+}
+
+.form-control {
+    background-color: #fff; /* Solid white background for inputs */
+    color: #333; /* Dark text for inputs */
+    border: 1px solid #ced4da; /* Standard Bootstrap border */
+}
+
+.form-control::placeholder {
+    color: #6c757d; /* Bootstrap's default placeholder color */
+}
+
+/* Ensure button text is readable (Bootstrap default is usually fine) */
+.btn-primary {
+    background-color: #007bff; /* Standard Bootstrap primary blue */
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #198754; /* Standard Bootstrap success green */
+    border-color: #198754;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+/* Card text content styling */
+.card-body .blockquote p { /* Style for the dare text */
+    color: #212529; /* Ensure dare text is dark and readable */
+}
+
+.card-body h2#whosTurn { /* Player's turn text */
+    /* text-primary is already applied in HTML, this is just a placeholder if further customization is needed */
+    /* For example, if we wanted a different shade of blue: color: #004085; */
+}
+
+/* Make sure headings and important text outside cards (like the main page title) stand out */
+/* h5#whosTurn and h3#dare are now inside a card, so they don't need the light color for page background. */
+/* Their color will be determined by card text color or specific classes like text-primary. */
+h1 {
+    color: #f8f9fa; /* A light color, slightly off-white for main page title */
+}
+/* h3 elements outside cards, if any, would also need this color. */
+
+
+/* General paragraph text (like the page subtitle) if not overridden by other classes */
+p.lead {
+    color: #e9ecef; /* A slightly softer white for paragraph text */
+}
+
+/* .centered-text class was removed as it's no longer used. */
